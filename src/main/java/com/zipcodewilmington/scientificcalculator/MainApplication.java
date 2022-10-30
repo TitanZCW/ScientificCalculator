@@ -14,4 +14,24 @@ public class MainApplication {
         Console.println("The user input %s as a integer", i);
         Console.println("The user input %s as a d", d);
     }
+
+    public static Double addition (int num1, int num2) {
+        double sum = num1 + num2;
+        return sum;
+    }
+
+    public static Double subtract (int num1, int num2) {
+        double difference =  num1 - num2;
+        return difference;
+    }
+
+    public static Double multiply (int num1, int num2) {
+        double product = num1 * num2;
+        return product;
+    }
+
+    public static Double divide (int num1, int num2) {
+        double quotient = num1 / num2;
+        return quotient;
+    }
 }
