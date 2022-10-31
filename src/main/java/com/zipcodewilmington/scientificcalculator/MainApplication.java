@@ -10,26 +10,33 @@ public class MainApplication {
     public static void main(String[] args) {
         Console.println("Welcome to our Calculator!");
 
-        String input = Console.getStringInput("Please enter your formula in the form of \"x + y\" (type help for a list of operators available):");
+        String input = Console.getStringInput("Please enter your formula in the form of \"x + y\" (type \"help\" for a list of operators available):");
 
-        if (input.equals("help")) {
-            Console.println("The available operators are:");
-            Console.println("Addition: +");
-            Console.println("Subtraction: -");
-            Console.println("Multiplication: *");
-            Console.println("Division: /");
-        } else if (getOperator(input).equals("+")) {
-            double output = addition(getFirstNumber(input), getSecondNumber(input));
-            Console.println(String.valueOf(output));
-        }else if (getOperator(input).equals("-")) {
-            double output = subtract(getFirstNumber(input), getSecondNumber(input));
-            Console.println(String.valueOf(output));
-        }else if (getOperator(input).equals("*")) {
-            double output = multiply(getFirstNumber(input), getSecondNumber(input));
-            Console.println(String.valueOf(output));
-        }else if (getOperator(input).equals("/")) {
-            double output = divide(getFirstNumber(input), getSecondNumber(input));
-            Console.println(String.valueOf(output));
+        while (true) {
+            if (input.equals("help")) {
+                Console.println("The available operators are:");
+                Console.println("Addition: +");
+                Console.println("Subtraction: -");
+                Console.println("Multiplication: *");
+                Console.println("Division: /");
+                input = Console.getStringInput("Enter your formula in the form of \"x + y\"");
+            } else if (getOperator(input).equals("+")) {
+                double output = addition(getFirstNumber(input), getSecondNumber(input));
+                Console.println(String.valueOf(output));
+                input = Console.getStringInput("");
+            } else if (getOperator(input).equals("-")) {
+                double output = subtract(getFirstNumber(input), getSecondNumber(input));
+                Console.println(String.valueOf(output));
+                input = Console.getStringInput("");
+            } else if (getOperator(input).equals("*")) {
+                double output = multiply(getFirstNumber(input), getSecondNumber(input));
+                Console.println(String.valueOf(output));
+                input = Console.getStringInput("");
+            } else if (getOperator(input).equals("/")) {
+                double output = divide(getFirstNumber(input), getSecondNumber(input));
+                Console.println(String.valueOf(output));
+                input = Console.getStringInput("");
+            }
         }
     }
 
@@ -71,18 +78,3 @@ public class MainApplication {
         return quotient;
     }
 }
-
-
-//        double numAdd1 = Console.getDoubleInput("Enter a number to add");
-//        double numAdd2 = Console.getDoubleInput("Enter another number to add");
-//        Console.println("Your sum is %.0f ", addition(numAdd1, numAdd2));
-
-
-//        Console.println("Welcome to my calculator!");
-//        String s = Console.getStringInput("Enter a string");
-//        Integer i = Console.getIntegerInput("Enter an integer");
-//        Double d = Console.getDoubleInput("Enter a double.");
-//
-//        Console.println("The user input %s as a string", s);
-//        Console.println("The user input %s as a integer", i);
-//        Console.println("The user input %s as a d", d);
