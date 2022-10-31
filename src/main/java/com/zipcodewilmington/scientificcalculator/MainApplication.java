@@ -74,7 +74,12 @@ public class MainApplication {
     }
 
     public static Double divide(double num1, double num2) {
-        double quotient = num1 / num2;
-        return quotient;
+        if (num2 == 0) {
+            Console.println("Error, cannot divide by 0");
+            return 0.0;
+        } else {
+            double quotient = num1 / num2;
+            return quotient;
+        }
     }
 }
